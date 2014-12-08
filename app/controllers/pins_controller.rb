@@ -10,15 +10,20 @@ class PinsController < ApplicationController
   # GET /pins/1
   # GET /pins/1.json
   def show
+    #@boards = @user.boards
   end
 
   # GET /pins/new
   def new
     @pin = Pin.new
+    @users = User.all
+    @boards = Board.all
   end
 
   # GET /pins/1/edit
   def edit
+    @boards = Board.all
+    @board = Board.new
   end
 
   # POST /pins
@@ -69,6 +74,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:name, :board_id, :image)
+      params.require(:pin).permit(:name, :image, :user_id, :board_id)
     end
 end

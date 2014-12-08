@@ -10,6 +10,10 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
+ #   @boards = @user.boards
+     @pins = Pin.all
+     @pin = Pin.new
+     @users = User.all
   end
 
   # GET /boards/new
@@ -19,6 +23,9 @@ class BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
+    @users = User.all
+    @user = User.new
+
   end
 
   # POST /boards
@@ -61,6 +68,7 @@ class BoardsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
@@ -69,6 +77,6 @@ class BoardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
-      params.require(:board).permit(:name, :about, :user_id)
+      params.require(:board).permit(:name, :about, :user_id, :full_name)
     end
 end

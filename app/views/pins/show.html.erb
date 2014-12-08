@@ -1,17 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pin.name %>
-</p>
+<div class= "columns item-background one-third">
 
-<p>
-  <strong>Board:</strong>
-  <%= @pin.board_id %>
-</p>
+  <div class="pin-image">
+  	<%= image_tag(@pin.image_url, :width => "100%") if @pin.image.present? %>
+  </div>
 
-<%= image_tag @pin.image, size: "200x150" %>
+  <div class= "item-information">
+	  <strong>Name:</strong>
+	  <%= @pin.name %>
+	  <strong>User:</strong>
+	  <%= @pin.user_id %>
+    <strong>Board:</strong>
+    <%= @pin.board_id %>
+  </div>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
 
+	<div class="item-links">
+        <%= link_to 'Edit', edit_pin_path(@pin) %>
+        <%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+</div>

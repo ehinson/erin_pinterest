@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'static_pages/about'
+  get 'static_pages/home'
+  get 'static_pages/contact'
+
+  get 'starfish' => 'static_pages#privacy_policy', as: 'privacy'
 
   root to: 'users#index'
+  
   resources :pins
 
   resources :boards
