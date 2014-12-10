@@ -10,7 +10,8 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
- #   @boards = @user.boards
+     # Because we set up the association between “user” and “boards”, we can call “.boards” on our instance variable to pull all boards associated with that user
+     @boards = @user.boards
      @pins = Pin.all
      @pin = Pin.new
      @users = User.all
@@ -65,6 +66,14 @@ class BoardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def delete_all
+    Board.delete_all
+    respond_to do |format|
+      format.html {redirect_to boards_url}
+      format.json {head :no_content}
     end
   end
 

@@ -5,11 +5,23 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if @users.count > 5
+      @some_text = "Yay! We have #{@users.count} users!"
+    else
+      @some_text = "We need more users."
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @boards = @user.boards
+
+    if @user.first_name == "Erin"
+      @some_text = "Hello Erin!"
+    else
+      @some_text = "You're not Erin, but you're just as good looking!"
+    end
   end
 
   # GET /users/new
@@ -60,6 +72,14 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def delete_all
+    User.delete_all
+    respond_to do |format|
+      format.html {redirect_to users_url}
+      format.json {head :no_content}
+     end
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

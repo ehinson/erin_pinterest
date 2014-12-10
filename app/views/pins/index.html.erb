@@ -1,6 +1,8 @@
 <div class="title"><h1>Listing pins</h1>
 </div>
 
+<%= @some_text %>
+
 <div class="columns">
 <% @pins.each do |pin| %>
       <div class= "item-background">
@@ -11,7 +13,8 @@
 
         <div class = "item-information">
         <h3><%= pin.name %></h3><!--setup pin.name associations-->
-        <h4><%= pin.user_id %></h4>
+        <h4><%= pin.user.full_name rescue "n/a" %></h4>
+        <h4><%= pin.board.name  rescue "N/A"%></h4>
         <!--board_id-->
         </div>
 
@@ -19,6 +22,7 @@
         <%= link_to 'Show', pin %>
         <%= link_to 'Edit', edit_pin_path(pin) %>
         <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete All Pins', Pin, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
     <% end %>

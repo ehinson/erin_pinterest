@@ -7,10 +7,12 @@
 
 <div>
   <strong>User:</strong>
-  <%= @board.user_id %>
+  <%= @board.user.first_name %>
+  <%= @board.user.last_name %>
 <div>
 
 <div class="columns">
+  
 <% @pins.each do |pin| %>
       <div class= "item-background">
         
@@ -20,7 +22,9 @@
 
         <div class = "item-information">
         <h3><%= pin.name %></h3><!--setup pin.name associations-->
-        <h4><%= pin.user_id %></h4>
+        <h4><%= pin.user.first_name rescue "n/a" %></h4>
+        <h4><%= pin.user.last_name rescue "n/a"  %></h4>
+        <h4><%= pin.board.name rescue "n/a" %></h4>
         <!--board_id-->
         </div>
 

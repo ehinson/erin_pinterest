@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   get 'starfish' => 'static_pages#privacy_policy', as: 'privacy'
 
-  root to: 'users#index'
+  
+
+
+  root to: 'static_pages#home'
   
   resources :pins
 
