@@ -5,6 +5,7 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.all
+    @pins = current_user.pins
   end
 
   # GET /pins/1
