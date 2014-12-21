@@ -39,3 +39,17 @@ div.thumb_nav {
 .title {
 	text-align: center;
 }
+.navbar .logo-text {
+	font-family: 'Lobster Two', cursive;
+	color: white;
+	font-size: 24px;
+}
+.navbar {
+	background-color: red;
+}
+.navbar ul li a{
+	color:white;
+}
+.navbar-collapse.navbar-nav.active {
+	color:blue;
+}

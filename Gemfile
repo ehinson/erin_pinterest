@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'devise', '~> 3.4.1'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 gem 'bootstrap-sass', '~> 3.3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'starfish' => 'static_pages#privacy_policy', as: 'privacy'
 
   
-
+  delete '/pins' => 'pins#delete_all'
 
   root to: 'static_pages#home'
   
