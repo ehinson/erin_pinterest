@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'masonry-rails', '~> 0.2.4'
 gem 'carrierwave'
 gem 'devise', '~> 3.4.1'
 gem 'omniauth'
