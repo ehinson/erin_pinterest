@@ -21,17 +21,6 @@
 //= require masonry/modernizr-transitions
 //= require masonry/box-maker
 //= require masonry/jquery.loremimages.min
-//= require masonry/jquery.imagesloaded.min
+//= require isotope/jquery.isotope
 
 
-    $("ul.images").loremImages( 100, 200, { // images base size 100 x 200 pixels
-    count:        20,        // load 20 images
-    grey:         1,         // load grey / black & white images
-    randomWidth:  100,       // width will be in 100-200 range
-    randomHeight: 100,       // height will be in 200-300 range
-    category:     'fashion', // get images from fashion category
-    itemBuilder:  function( index, url, width, height ){ // custom HTML output for UL container
-        // `this` is jQuery wrapped container element
-        return '<li><img src="'+url+'" width="'+width+'" height="'+height+'" alt="Image '+(i+1)+'"></li>';
-    }
-});
