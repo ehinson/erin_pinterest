@@ -1,31 +1,56 @@
-<ul class="cbp-rfgrid">
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <li><a href="#"><img src="http://placekitten.com/g/200/300" /><div><h3>Felis catus</h3></div></a></li>
-    <!-- ... -->
-</ul>
-<strong><p class="sign_up">
 
-    <% if user_signed_in? %>
+<div id="container"  class="masonry js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
 
-      Logged in as <strong><%= current_user.email %></strong>.
+<div class="item grid">
+    <figure class= "effect-sadie">
+      <img src="https://unsplash.it/200/300?image=336" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=336 200w" sizes = "20vw">
+      <figcaption> 
+        <h2>Make a <span>Pin</span></h2>
+        <p>Find an image you love.</p>
+        <a href="#">See more</a>
+      </figcaption>
+      </figure>
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=30" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=30 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=21" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=21 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=34" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=34 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=63" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=63 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=360" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=360 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=436" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=436 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
+    <div class="item">
+      <img src="https://unsplash.it/200/300?image=365" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=365 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
 
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+     <div class="item">
+      <img src="https://unsplash.it/200/300?image=429" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=429 200w" sizes = "20vw">
+      <!-- <div = "hover"><h3>Felis catus</h3></div> -->
+    </div>
 
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+     <div class="item">
+      <img src="https://unsplash.it/200/300?image=493" alt="PlaceHolder" srcset="https://unsplash.it/200/300?image=493 200w" sizes = "20vw">
+<!--       <div = "hover"><h3>Felis catus</h3></div>
+ -->    </div>
+</div>
+<div class="registration"></div>
 
-    <% else %>
 
-      <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> |
-
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-
-    <% end %>
-
-</p></strong>
 

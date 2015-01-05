@@ -46,25 +46,54 @@ div.thumb_nav {
 .title {
 	text-align: center;
 }
+.shadow {
+  -moz-box-shadow:    0px 10px 10px -10px #000;
+  -webkit-box-shadow: 0px 10px 10px -10px #000;
+  box-shadow:         0px 10px 10px -10px #000;
+  z-index: 1000;
+}
+.container {
+	border-radius:0px;
+}
 
 /* Navigation */
 
-.navbar .logo-text {
+.navbar .navbar-brand {
 	font-family: 'Lobster Two', cursive;
-	color: white;
-	font-size: 24px;
+	color: red;
+	font-size: 36px;
 }
 .navbar {
-	background-color: #f00;
+	background-color: #fff;
 	margin: 0px;
 	border:none;
+	border-radius: 0px;
 }
-.navbar ul li a, a.navbar-brand.logo-text{
-	color:white;
+.navbar ul li a, 
+a.navbar-brand.logo-text, 
+a.navbar-brand.logo-text:hover,
+.navbar-default .navbar-nav > li > a, 
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:link, 
+.navbar-default .navbar-nav > li > a:visited{
+	color:red;
 	text-decoration:none;
 }
-.navbar-collapse.navbar-nav.active {
-	color:blue;
+.navbar-default .navbar-nav > li > a:hover{
+	background-color:red;
+	color:white;
+}
+.navbar a:hover, a:link, a:visited {
+	color:red;
+}
+a.btn.btn-default {
+	background: none;
+	border: 1px solid red;
+	text-decoration: none;
+	border-radius: 0px;
+}
+.spread {
+	letter-spacing: 1px;
 }
 
 
@@ -133,4 +162,3 @@ div.thumb_nav {
     letter-spacing: 2px;
     padding: 0 10px;
 }  
-
