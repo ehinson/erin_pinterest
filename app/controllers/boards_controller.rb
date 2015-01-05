@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
-     @boards = @user.board
+     @boards = Board.all
      @pins = Pin.all
      @pin = Pin.new
      @users = User.all

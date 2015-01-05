@@ -1,2 +1,45 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+
+
+<nav id="page-nav">
+  <a href="../pages/2.html"></a>
+</nav>
+
+<script type="text/javascript">
+$("#nightlife").loremImages( 260, 180, {
+  count:       8,
+  grey:        1,
+  category:    'nightlife',
+  itemBuilder: function(i,url){
+    return '<li class="box col3 thumbnail"><a href="http://lorempixel.com" class="thumbnail"><img src="'+url+'"></a></li>';
+  }
+});</script>
+
+
+<div class="box col3">
+  <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+  <p>Vestibulum volutpat, lacus a ultrices sagittis,</p>
+  <ul>
+    <li>Lacus a ultrices sagittis</li>
+    <li>Democratis</li>
+    <li>Plummus</li>
+  </ul>
+</div>
+
+<div id="masonry-container" class="masonry infinite-scroll centered clearfix">
+ <!--  <ul id ="nightlife"></ul> -->
+
+  <div class="box col3" id="nightlife">
+    
+  </div>
+
+  <!-- <div class="box col1">
+    <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. </p>
+  </div>
+
+  <div class="box col2">
+    <p>
+      <a href="http://www.flickr.com/photos/nemoorange/3319714470/" title="Whitlow's on Wilson by nemoorange, on Flickr"><img src="http://farm4.static.flickr.com/3008/3319714470_c05a5cb5a8_m.jpg" alt="Whitlow's on Wilson" /></a>
+    </p>
+  </div> -->
+  ...
+</div>
