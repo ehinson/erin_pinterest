@@ -1,0 +1,49 @@
+<div class="item w2"><img src="http://placekitten.com/g/400/300" alt="PlaceKitten" srcset="http://placekitten.com/g/600/300 600w" sizes = "25vw"></div>
+  <div class="item h3"></div>
+  <div class="item h2"></div>
+  <div class="item w3"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item h2"></div>
+  <div class="item w2 h3"></div>
+  <div class="item"></div>
+  <div class="item h2"></div>
+  <div class="item"></div>
+  <div class="item w2 h2"></div>
+  <div class="item w2"></div>
+  <div class="item"></div>
+  <div class="item h2"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item h3"></div>
+  <div class="item h2"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item h2"></div>
+
+    data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+       <% if user_signed_in? %>
+
+      <p class="navbar-text">Logged in as <strong><%= current_user.email %></strong>.</p>
+
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-default' %> 
+
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-default'  %>
+      
+
+    <% else %>
+
+      <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-default'  %> 
+
+      <%= link_to "Login", new_user_session_path, :class => 'btn btn-default'  %>
+
+    <% end %>
+
+    <div id="user-widget">
+      <% if current_user %>
+        Welcome <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+      </div>

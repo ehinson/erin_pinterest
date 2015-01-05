@@ -12,7 +12,7 @@
 </head>
 <body>
 
- <nav class="navbar navbar-default " role="navigation">
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid ">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -52,9 +52,10 @@
     <div id="user-widget" class="pull-right">
       <% if current_user %>
         Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <%= link_to "Sign out", signout_path, id: "sign_out", :class => 'btn btn-default' %>
       <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", :class => 'btn btn-default' %>
       <% end %>
       </div>
 
@@ -67,9 +68,7 @@
 
 <%= yield %>
 
-<center>
-<%= render "shared/footer" %>
-</center>
+
 
 </body>
 </html>
