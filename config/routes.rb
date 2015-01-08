@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, :controllers => { :registrations => "registrations" }
   get 'static_pages/about'
   get 'static_pages/home'
@@ -7,7 +17,7 @@ Rails.application.routes.draw do
   get 'starfish' => 'static_pages#privacy_policy', as: 'privacy'
 
   
-
+  delete '/pins' => 'pins#delete_all'
 
   root to: 'static_pages#home'
   

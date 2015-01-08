@@ -10,8 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
-     # Because we set up the association between “user” and “boards”, we can call “.boards” on our instance variable to pull all boards associated with that user
-     @boards = @user.boards
+     @boards = Board.all
      @pins = Pin.all
      @pin = Pin.new
      @users = User.all
@@ -36,7 +35,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to ‘/pins/new’, notice: 'Board was successfully created.' }
+        format.html { redirect_to '/pins/new', notice: 'Board was successfully created.' }
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new }
