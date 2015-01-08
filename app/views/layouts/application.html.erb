@@ -4,13 +4,16 @@
   <title>Pinterest</title>
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :modernizr %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="/assets/javascripts/packery.pkgd.min.js"></script>
+  <script src="/assets/javascripts/loremimages.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
- <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid ">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -19,10 +22,10 @@
       <a class="navbar-brand logo-text" href="#">Pinterest</a>
     </div>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
+<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav text-uppercase spread">
     
-    <li class="active"><%= link_to "Home", static_pages_home_path %></li>
+    <li><%= link_to "Home", static_pages_home_path %></li>
     <li><%= link_to "About", static_pages_about_path %> </li>
     <li><%= link_to "Users", users_path %></li>
     <li><%= link_to "Boards", boards_path %></li>
@@ -46,12 +49,13 @@
 
     <% end %>
 
-    <div id="user-widget">
+    <div id="user-widget" class="pull-right">
       <% if current_user %>
         Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <%= link_to "Sign out", signout_path, id: "sign_out", :class => 'btn btn-default' %>
       <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", :class => 'btn btn-default' %>
       <% end %>
       </div>
 
@@ -64,9 +68,7 @@
 
 <%= yield %>
 
-<center>
-<%= render "shared/footer" %>
-</center>
+
 
 </body>
 </html>
